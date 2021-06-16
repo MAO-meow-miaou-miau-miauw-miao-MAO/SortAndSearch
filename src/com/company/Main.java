@@ -1,7 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -9,38 +8,40 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        //test inputs for sorting and searching...
+        int[] large = largeBatch();
+        int[] small = smallBatch();
+
         /*
-         * Call your sorting and searching Algorithms here...
+         * Call your sorting and searching Algorithms below...
+         *
+         *  PASSING: Arrays.toString(<array-that-you-want-see>) TO
+         * System.out.println()
+         *  >> will print the contents of the int array to the console.
          *
          * */
-        ArrayList<Integer> large = largeBatch();
-        ArrayList<Integer> small = smallBatch();
-        ArrayList<Integer> expectedLrg = expected(large);
-        ArrayList<Integer> expectedSml = expected(small);
+
 
 
     }
 
-    public static ArrayList<Integer> largeBatch() {
-        ArrayList<Integer> largeBatch = new ArrayList<>();
+    public static int[] largeBatch() {
+        int[] largeBatch = new int[2000];
         for (int i = 0; i < 2000; i++) {
-
-            largeBatch.add(r.nextInt(10000));
+            largeBatch[i] = (r.nextInt(10000));
         }
         return largeBatch;
     }
 
-    public static ArrayList<Integer> smallBatch() {
-        ArrayList<Integer> smallBatch = new ArrayList<>();
+    public static int[] smallBatch() {
+        int[] smallBatch = new int[20];
         for (int i = 0; i < 20; i++) {
-            smallBatch.add(r.nextInt(100));
+            smallBatch[i] = (r.nextInt(100));
         }
         return smallBatch;
     }
 
-    public static ArrayList<Integer> expected(ArrayList<Integer> unsorted) {
-        ArrayList<Integer> sorted = (ArrayList<Integer>) unsorted.clone();
-        Collections.sort(sorted);
-        return sorted;
-    }
+
+
 }
